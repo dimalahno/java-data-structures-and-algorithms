@@ -38,6 +38,13 @@ public class SortingExampleMesurement {
         System.out.println(list.getClass().getSimpleName() + " time = " + time);
     }
 
+    private static void parallelSortList(List<Integer> list) {
+        long time = System.currentTimeMillis();
+        list.sort(null);
+        time = System.currentTimeMillis() - time;
+        System.out.println(list.getClass().getSimpleName() + " time = " + time);
+    }
+
     private static List<Integer> fillWithLotsOfRandomValues() {
         return ThreadLocalRandom.current().ints(10_000_000).parallel().boxed()
                 .collect(Collectors.toList());
