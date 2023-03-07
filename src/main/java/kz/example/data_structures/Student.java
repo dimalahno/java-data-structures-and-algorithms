@@ -2,28 +2,7 @@ package kz.example.data_structures;
 
 import java.util.Objects;
 
-public class Student implements Comparable<Student>{
-    private final int year;
-    private final String name;
-    private final double average;
-
-    public Student(int year, String name, double average) {
-        this.year = year;
-        this.name = name;
-        this.average = average;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getAverage() {
-        return average;
-    }
+public record Student(int year, String name, double average) implements Comparable<Student> {
 
     @Override
     public boolean equals(Object o) {
